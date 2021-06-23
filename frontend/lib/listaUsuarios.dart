@@ -71,7 +71,7 @@ class ListaUsuarios extends StatelessWidget {
 }
 
 Future<List<User>> obtenerUser() async {
-  final url = Uri.parse('http://bf12d21f1e5f.ngrok.io/comments');
+  final url = Uri.parse('http://127.0.0.1:3000/users');
   final respuesta = await http.get(url);
 
   if (respuesta.statusCode == 200) {
