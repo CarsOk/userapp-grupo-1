@@ -6,9 +6,9 @@ class UsersController < ApplicationController
 
   def create
     usuario = User.create!(
-    name:params[:name],
-    email:params[:email],
-    age:params[:age)
+    name: params[:name],
+    email: params[:email],
+    age: params[:age])
     render json: usuario, status: 201
   end
 
@@ -20,9 +20,9 @@ class UsersController < ApplicationController
   def update 
     usuario = User.find(params[:id])
     user.update!(
-    name:params[:name],
-    email:params[:email],
-    age:params[:age])
+    name: params[:name],
+    email: params[:email],
+    age: params[:age])
     render json:  usuario,  status: 200
   end
 
