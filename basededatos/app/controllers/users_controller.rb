@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def index
     usuario = User.all 
     render json: usuario, status: 200
