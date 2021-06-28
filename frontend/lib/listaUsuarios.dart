@@ -31,7 +31,7 @@ class ListaUsuarios extends StatelessWidget {
         },
       ),
       body: FutureBuilder<List<User>>(
-        future: obtenerUser(),
+        future: obtenerUsuarios(),
         builder: (BuildContext context, AsyncSnapshot<List<User>> snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             List<User> usuarios = snapshot.data;
@@ -59,8 +59,9 @@ class ListaUsuarios extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: Icon(Icons.email, color: Colors.black),
+              leading: Icon(Icons.person, color: Colors.black),
               subtitle: Text(user.email),
+              minLeadingWidth: 30.0,
             ),
             Divider(),
           ],
@@ -70,7 +71,7 @@ class ListaUsuarios extends StatelessWidget {
   }
 }
 
-Future<List<User>> obtenerUser() async {
+Future<List<User>> obtenerUsuarios() async {
   final url = Uri.parse('http://127.0.0.1:3000/users');
   final respuesta = await http.get(url);
 
