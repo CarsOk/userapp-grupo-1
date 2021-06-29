@@ -9,7 +9,7 @@ class Formulario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final users = User2(id: '1');
+    final users = User2(id: '1', age: '1');
 
     return Scaffold(
       appBar: AppBar(
@@ -62,6 +62,18 @@ class Formulario extends StatelessWidget {
               SizedBox(
                 height: 10.0,
               ),
+              TextField(
+                autofocus: true,
+                textCapitalization: TextCapitalization.none,
+                decoration: InputDecoration(
+                  labelText: 'Edad',
+                  border: OutlineInputBorder(),
+                ),
+                onChanged: (valor) => users.age = valor,
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
               ElevatedButton(
                   onPressed: () async {
                     User2 user = await registrar(users.toJson());
@@ -71,7 +83,7 @@ class Formulario extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DatosFormulario(),
+                            builder: (context) => DatosFormulario(user),
                           ));
                     } else {
                       print('NO GUARDADO');
@@ -89,7 +101,7 @@ class Formulario extends StatelessWidget {
   }
 
   Future<User2> registrar(Map<String, dynamic> datos) async {
-    final url = Uri.parse('http://127.0.0.1:3000/users');
+    final url = Uri.parse('http://59677c594475.ngrok.io/users');
     final respuesta = await http.post(url, body: datos);
     print('Response status: ${respuesta.statusCode}');
 
