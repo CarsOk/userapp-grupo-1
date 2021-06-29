@@ -27,7 +27,7 @@ class User2 {
         id: json["id"].toString(),
         name: json["name"],
         email: json["email"],
-        age: json["age"],
+        age: json["age"].toString(),
       );
 
   Map<String, dynamic> toJson() => {

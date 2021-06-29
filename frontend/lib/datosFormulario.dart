@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:frontend/Models/2modelsUser.dart';
+import 'package:frontend/listaUsuarios.dart';
+
 class DatosFormulario extends StatelessWidget {
-  const DatosFormulario({Key key}) : super(key: key);
+  //const DatosFormulario({Key key}) : super(key: key);
+  final User2 user2;
+  DatosFormulario(this.user2);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class DatosFormulario extends StatelessWidget {
               color: Colors.black,
             ),
             subtitle: Text(
-              user.id,
+              user2.id,
             ),
           ),
           ListTile(
@@ -45,7 +50,7 @@ class DatosFormulario extends StatelessWidget {
               color: Colors.black,
             ),
             subtitle: Text(
-              user.name,
+              user2.name,
               style: TextStyle(
                 fontSize: 15.0,
                 fontWeight: FontWeight.bold,
@@ -66,15 +71,47 @@ class DatosFormulario extends StatelessWidget {
               color: Colors.black,
             ),
             subtitle: Text(
-              user.email,
+              user2.email,
               style: TextStyle(
                 fontSize: 15.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
+          Divider(),
+          ListTile(
+            title: Text(
+              'Edad del Usuario',
+              style: TextStyle(
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            leading: Icon(
+              Icons.format_list_numbered,
+              color: Colors.black,
+            ),
+            subtitle: Text(
+              user2.age,
+              style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
         ],
       ),
-    )
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.exit_to_app,
+          size: 30.0,
+        ),
+        onPressed: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (BuildContext context) => ListaUsuarios()));
+        },
+      ),
+    );
   }
 }
