@@ -6,10 +6,11 @@ import 'package:frontend/datosFormulario.dart';
 
 class Formulario extends StatelessWidget {
   //const Formulario({Key key}) : super(key: key);
-  final users = User(id: '1');
 
   @override
   Widget build(BuildContext context) {
+    final users = User2(id: '1');
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -63,7 +64,7 @@ class Formulario extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () async {
-                    User user = await registrar(users.toJson());
+                    User2 user = await registrar(users.toJson());
                     if (user != null) {
                       print('Guardado ');
                       Navigator.pop(context);
@@ -87,13 +88,13 @@ class Formulario extends StatelessWidget {
     );
   }
 
-  Future<User> registrar(Map<String, dynamic> datos) async {
-    final url = Uri.parse('http://bf12d21f1e5f.ngrok.io/comments');
+  Future<User2> registrar(Map<String, dynamic> datos) async {
+    final url = Uri.parse('http://127.0.0.1:3000/users');
     final respuesta = await http.post(url, body: datos);
     print('Response status: ${respuesta.statusCode}');
 
     if (respuesta.statusCode == 201) {
-      return userFromJson(respuesta.body);
+      return usuarioFromJson(respuesta.body);
     } else {
       return null;
     }
