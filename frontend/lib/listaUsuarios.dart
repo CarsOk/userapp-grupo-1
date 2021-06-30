@@ -21,8 +21,8 @@ class ListaUsuarios extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
-          Icons.plus_one,
-          size: 30.0,
+          Icons.person_add,
+          size: 34.0,
         ),
         onPressed: () {
           Navigator.of(context).pop();
@@ -55,12 +55,22 @@ class ListaUsuarios extends StatelessWidget {
               title: Text(
                 user.name,
                 style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              leading: Icon(
+                Icons.person_pin_outlined,
+                color: Colors.black,
+                size: 32.0,
+              ),
+              subtitle: Text(
+                user.email,
+                style: TextStyle(
                   fontSize: 17.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: Icon(Icons.person, color: Colors.black),
-              subtitle: Text(user.email),
               minLeadingWidth: 30.0,
             ),
             Divider(),
@@ -72,7 +82,7 @@ class ListaUsuarios extends StatelessWidget {
 }
 
 Future<List<User>> obtenerUsuarios() async {
-  final url = Uri.parse('http://59677c594475.ngrok.io/users');
+  final url = Uri.parse('http://9d79f4b35ae5.ngrok.io/users');
   final respuesta = await http.get(url);
 
   if (respuesta.statusCode == 200) {

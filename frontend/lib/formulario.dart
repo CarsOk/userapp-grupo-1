@@ -28,9 +28,9 @@ class Formulario extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Digitar Informacion',
+                'Digitar Información',
                 style: TextStyle(
-                  fontSize: 25.0,
+                  fontSize: 28.0,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
@@ -101,7 +101,7 @@ class Formulario extends StatelessWidget {
   }
 
   Future<User2> registrar(Map<String, dynamic> datos) async {
-    final url = Uri.parse('http://59677c594475.ngrok.io/users');
+    final url = Uri.parse('http://9d79f4b35ae5.ngrok.io/users');
     final respuesta = await http.post(url, body: datos);
     print('Response status: ${respuesta.statusCode}');
 
