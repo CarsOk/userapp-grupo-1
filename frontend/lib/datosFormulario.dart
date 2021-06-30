@@ -25,34 +25,40 @@ class DatosFormulario extends StatelessWidget {
             title: Text(
               'Id del Usuario',
               style: TextStyle(
-                fontSize: 17.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             leading: Icon(
-              Icons.person_add_alt,
+              Icons.person_pin_circle,
               color: Colors.black,
+              size: 32.0,
             ),
             subtitle: Text(
               user2.id,
+              style: TextStyle(
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           ListTile(
             title: Text(
               'Nombre del Usuario',
               style: TextStyle(
-                fontSize: 17.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             leading: Icon(
-              Icons.person,
+              Icons.person_pin_rounded,
               color: Colors.black,
+              size: 32.0,
             ),
             subtitle: Text(
               user2.name,
               style: TextStyle(
-                fontSize: 15.0,
+                fontSize: 17.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -62,18 +68,19 @@ class DatosFormulario extends StatelessWidget {
             title: Text(
               'Correo del Usuario',
               style: TextStyle(
-                fontSize: 17.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             leading: Icon(
               Icons.email,
-              color: Colors.black,
+              color: Colors.black, 
+              size: 32.0,
             ),
             subtitle: Text(
               user2.email,
               style: TextStyle(
-                fontSize: 15.0,
+                fontSize: 17.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -83,18 +90,19 @@ class DatosFormulario extends StatelessWidget {
             title: Text(
               'Edad del Usuario',
               style: TextStyle(
-                fontSize: 17.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             leading: Icon(
               Icons.format_list_numbered,
-              color: Colors.black,
+              color: Colors.black, 
+              size: 32.0,
             ),
             subtitle: Text(
               user2.age,
               style: TextStyle(
-                fontSize: 15.0,
+                fontSize: 17.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
